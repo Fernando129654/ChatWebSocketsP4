@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat WebSockets P4</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="client.js" defer></script>
+</head>
+<body>
+<main class="chat-container">
+    <header class="chat-header">
+        <div>
+            <h1>Chat WebSockets</h1>
+            <p>Comunicación en tiempo real</p>
+        </div>
+
+        <span id="connection-status" class="status disconnected">
+                Desconectado
+            </span>
+    </header>
+
+    <section class="user-section">
+        <label for="username">Tu nombre</label>
+        <div class="user-controls">
+            <input
+                    type="text"
+                    id="username"
+                    maxlength="30"
+                    placeholder="Escribe tu nombre"
+                    autocomplete="nickname"
+            >
+            <button id="save-name-button" type="button">
+                Guardar nombre
+            </button>
+        </div>
+        <p id="user-feedback" class="feedback" aria-live="polite"></p>
+    </section>
+
+    <section class="messages-section">
+        <h2>Conversación</h2>
+
+        <div
+                id="messages"
+                class="messages"
+                role="log"
+                aria-live="polite"
+                aria-relevant="additions"
+        >
+            <p class="empty-message">
+                Los mensajes aparecerán aquí.
+            </p>
+        </div>
+    </section>
+
+    <form id="message-form" class="message-form">
+        <label for="message-input">Mensaje</label>
+
+        <div class="message-controls">
+            <input
+                    type="text"
+                    id="message-input"
+                    maxlength="500"
+                    placeholder="Escribe un mensaje..."
+                    autocomplete="off"
+                    required
+            >
+
+            <button id="send-button" type="submit" disabled>
+                Enviar
+            </button>
+        </div>
+
+        <p id="message-feedback" class="feedback" aria-live="polite"></p>
+    </form>
+
+    <footer>
+        <p>Proyecto académico · Programación 4</p>
+    </footer>
+</main>
+</body>
+</html>
